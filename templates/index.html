@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{ app_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="brand">{{ app_name }}</div>
+        <nav class="nav-links">
+            <a href="#">About</a>
+            <a href="https://github.com/MrFailure777">Portfolio</a>
+        </nav>
+    </header>
+    <h1 style="text-align: center;"><span style="color: red;">FASTEST</span> DOWNLOADER</h1>
+    <main class="hero">
+        <div class="card" id="mp3Card">
+            <h3>MP3 Download</h3>
+            <p>Extract audio (MP3) from a YouTube video.</p>
+            <button class="open-btn" data-mode="mp3">Open</button>
+        </div>
+
+        <div class="card" id="mp4Card">
+            <h3>Video Download</h3>
+            <p>Download video as MP4 .</p>
+            <button class="open-btn" data-mode="mp4">Open</button>
+        </div>
+
+        <div class="card" id="playlistCard">
+            <h3>Playlist Download</h3>
+            <p>Download an entire playlist (zipped).</p>
+            <button class="open-btn" data-mode="playlist">Open</button>
+
+    </main>
+
+    <section class="form-area" id="formArea" aria-hidden="true">
+        <div class="form-card">
+            <h3 id="formTitle">Download</h3>
+            <input id="videoUrl" placeholder="Paste YouTube video or playlist URL" />
+            <div class="actions">
+                <button id="startDownload">Download</button>
+                <button id="closeForm" class="secondary">Cancel</button>
+            </div>
+            <div id="progressBox" class="progress-box" style="display:none;">
+                <div id="progressText">Waiting...</div>
+            </div>
+            <div id="errorBox" class="error-box" style="display:none;"></div>
+        </div>
+    </section>
+
+    <script>
+        const APP_NAME = "{{ app_name }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

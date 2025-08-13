@@ -1,0 +1,159 @@
+:root {
+  --bg1: #0f1724;
+  --card: #ffffff;
+  --accent: #ff6b6b;
+  --muted: #9aa6b2;
+}
+
+* {
+  box-sizing: border-box
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(135deg, #0f1724 0%, #0b2545 100%);
+  color: white;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 28px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 20px;
+  color: #fff;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.85);
+  margin-left: 18px;
+  text-decoration: none;
+}
+
+/* Hero cards */
+.hero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px;
+  max-width: 1100px;
+  margin: 20px auto;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  text-align: center;
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 18px
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 16px
+}
+
+button.open-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Form area (overlay-ish) */
+.form-area {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+}
+
+.form-card {
+  width: min(720px, 92%);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 22px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.form-card input {
+  width: 80%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  margin: 12px 0;
+  outline: none;
+}
+
+.actions {
+  margin-top: 10px
+}
+
+.actions button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer
+}
+
+.actions .secondary {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 8px
+}
+
+/* progress */
+.progress-box {
+  margin-top: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.error-box {
+  color: #ff8a8a;
+  margin-top: 10px
+}
+
+/* Hide form area by default by setting aria-hidden true from JS */
+.form-area[aria-hidden="true"] {
+  display: none
+}
+
+/* Responsive mobile */
+@media (max-width:900px) {
+  .hero {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px
+  }
+
+  .form-card input {
+    width: 100%
+  }
+}
+
+
+
